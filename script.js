@@ -10,10 +10,15 @@ button.setAttribute("id", "button")
 
 function sketchPad (element, quantity, parentElement) {
     const value = quantity * quantity;
+    const containerWidth = container.offsetWidth;
+    const squareSize = containerWidth / Math.sqrt(value);
     for(let i = 0; i < value; i++) {
+
         const square = document.createElement(element);
         parentElement.appendChild(square);
         square.setAttribute("class", "square");
+        square.style.width = `${squareSize}px`;
+        square.style.height = `${squareSize}px`;
     }
 }
 
